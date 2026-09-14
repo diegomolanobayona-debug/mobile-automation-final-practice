@@ -56,4 +56,9 @@ public class LoginScreen extends BaseScreen {
     public void confirmAlert() {
         click(alertOkButton, "Alert OK button");
     }
+    private final By titleText = By.xpath("//android.widget.TextView[@text=\"Login / Sign up Form\"]");
+
+    public boolean isDisplayed() {
+        return isElementDisplayed(titleText, 5);
+    }
 }
