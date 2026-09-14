@@ -3,6 +3,11 @@ package com.dmolano.mobile.screens;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 
+/**
+ * Page Object for the "Web" section, a WebView embedding a small
+ * informational site about WebdriverIO. Loading is noticeably slower than
+ * the native screens, hence the extended timeout.
+ */
 public class WebScreen extends BaseScreen {
 
     private final By titleText = By.xpath(
@@ -12,8 +17,8 @@ public class WebScreen extends BaseScreen {
         super(driver);
     }
 
+    /** @return true if the WebView content has finished loading and is visible */
     public boolean isDisplayed() {
-        // WebView tarda más en cargar que las pantallas nativas: timeout extendido
         return isElementDisplayed(titleText, 20);
     }
 }
