@@ -5,6 +5,12 @@ import com.dmolano.mobile.screens.LoginScreen;
 import com.dmolano.mobile.utils.RandomDataGenerator;
 import org.testng.annotations.Test;
 
+/**
+ * Scenario 2: verifies a successful Sign Up. Precondition: navigates to the
+ * Login section first, then switches to the Sign Up form. Uses a
+ * dynamically generated email on every run so the test can be executed
+ * repeatedly without colliding on an already-registered address.
+ */
 public class SignUpTest extends BaseTest {
 
     @Test

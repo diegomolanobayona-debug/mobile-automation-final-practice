@@ -5,6 +5,12 @@ import com.dmolano.mobile.screens.LoginScreen;
 import com.dmolano.mobile.utils.RandomDataGenerator;
 import org.testng.annotations.Test;
 
+/**
+ * Scenario 3: verifies a successful Login. Precondition: a previously
+ * created user at the Login section. This test is fully independent from
+ * {@link SignUpTest} — it reuses the sign-up flow internally to create its
+ * own user rather than depending on SignUpTest having run first.
+ */
 public class LoginTest extends BaseTest {
 
     @Test
@@ -17,6 +23,8 @@ public class LoginTest extends BaseTest {
         String email = RandomDataGenerator.randomEmail();
         String password = RandomDataGenerator.password();
 
+        // Reuses the Sign Up flow to satisfy this scenario's precondition
+        // ("a previously created user") without depending on SignUpTest.
         loginScreen.goToSignUpTab();
         loginScreen.fillSignUpForm(email, password);
         loginScreen.confirmAlert();
